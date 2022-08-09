@@ -1,3 +1,4 @@
+import { Avatar } from "./Avatar";
 import { Comment } from "./Comment";
 import styles from "./Post.module.css";
 
@@ -6,8 +7,7 @@ export function Post() {
     <article className={styles.post}>
       <header>
         <div className={styles.author}>
-          <img
-            className={styles.avatar}
+          <Avatar 
             src="https://scontent.fcgh55-1.fna.fbcdn.net/v/t39.30808-1/285343742_5810645965619401_8863373842491284619_n.jpg?stp=dst-jpg_p160x160&_nc_cat=104&ccb=1-7&_nc_sid=7206a8&_nc_eui2=AeEMPZKQtK2gA3B2A6ix2y99KAnLWFipIJwoCctYWKkgnOv9Cd4V5GYKAjqBTaKox511TpmsdyXNvFqbFWHrCaYV&_nc_ohc=6D97fEJSqyEAX-s8j8A&_nc_ht=scontent.fcgh55-1.fna&oh=00_AT8_98l9DSV2mDV3DmI7WGziCkCf3UW5J9o9sTES77mh1A&oe=62F17463"
             alt=""
           />
