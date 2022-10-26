@@ -21,9 +21,10 @@ const posts = [
         content:
           "Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é IgniteFeed 🚀",
       },
-      { type: "link", content: "annelousiane/ignitefeeed" },
+      { type: "link", 
+        content: "annelousiane/ignitefeeed" },
     ],
-    publishedAt: new Date('2022-08-03 20:00:00')
+    publishedAt: new Date('2022-11-03 20:00:00')
   },
 
   {
@@ -31,18 +32,18 @@ const posts = [
     author: {
       avatarUrl: "https://images.unsplash.com/photo-1485893086445-ed75865251e0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGdpcmx8ZW58MHwyfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
       name: "Sophie Charson",
-      role: "Marketing Director @ SabakaSabaka",
+      role: "Marketing @ SabakaSabaka",
     },
     content: [
       { type: "paragraph", content: "Salur  👋" },
       {
         type: "paragraph",
         content:
-          "Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é IgniteFeed 🚀",
+          "Esse app ta ficando muito bom 🚀",
       },
       { type: "link", content: "iamsophie/ignitefeeed" },
     ],
-    publishedAt: new Date('2022-08-20 20:00:00')
+    publishedAt: new Date('2022-10-20 20:00:00')
   },
 
   {

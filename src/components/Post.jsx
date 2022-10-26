@@ -10,7 +10,7 @@ import styles from "./Post.module.css";
 export function Post({ author, publishedAt, content }) {
   // criar estado
   const [comments, setComments] = useState([
-    'Post muito bacana hein!'
+    'Post muito bacana!'
   ])
 
 
@@ -52,15 +52,11 @@ export function Post({ author, publishedAt, content }) {
       </header>
 
       <div className={styles.content}>
-        {content.map((line) => {
-          if (line.type === "paragraph") {
-            return <p>{line.content}</p>;
-          } else if (line.type === "link") {
-            return (
-              <p>
-                <a href="http://">{line.content}</a>
-              </p>
-            );
+        {content.map(line => {
+          if(line.type === 'paragraph') {
+            return <p>{line.content}</p>
+          } else if (line.type === 'link') {
+            return <a href="#">{line.content}</a>
           }
         })}
       </div>
