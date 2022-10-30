@@ -1,18 +1,35 @@
 import { ThumbsUp, Trash } from "phosphor-react";
+import { useState } from "react";
 import { Avatar } from "./Avatar";
 import styles from "./Comment.module.css";
 
-export function Comment({ content, onDeleteComment }) {
+interface CommentProps {
+  content: string;
+  onDeleteComment: (comment: string) => void;
+}
+
+
+export function Comment({ content, onDeleteComment }: CommentProps) {
+  const [likeCount, setLikeCount] = useState(0);
 
   function handleDeleteComment() {
     onDeleteComment(content);
+  }
+
+  // funcao que conta o nunmero de likes no comment
+  function handleLikeComment() {
+    setLikeCount((state) => {
+      return state + 1
+    })
   }
 
   return (
     <div className={styles.comment}>
       <Avatar
         hasBorder={false}
-        src="https://images.unsplash.com/photo-1625241189662-2980453ebffc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=50"
+        src="https://images.unsplash.com/photo-1625241189662-2980453ebffc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=50" 
+        alt=""
+        
       />
 
       <div className={styles.commentBox}>
@@ -26,7 +43,8 @@ export function Comment({ content, onDeleteComment }) {
             </div>
 
             <button
-              onClick={handleDeleteComment}
+            // onMouseDown evita chamar o onBlur antes de deletar um item
+              onMouseDown={handleDeleteComment}
               title="Delete comment"
             >
               <Trash size={24} />
@@ -37,9 +55,9 @@ export function Comment({ content, onDeleteComment }) {
         </div>
 
         <footer>
-          <button>
+          <button onClick={handleLikeComment}>
             <ThumbsUp size={20} />
-            Aplaudir <span>20</span>
+            Aplaudir <span>{likeCount}</span>
           </button>
         </footer>
       </div>
